@@ -1,6 +1,7 @@
+### Get all
 GET http://localhost:3000/events
 
-###
+### Create
 # @name createEvent
 POST http://localhost:3000/events
 Content-Type: application/json
@@ -15,10 +16,10 @@ Content-Type: application/json
 ###
 @eventId = {{ createEvent.response.body.id }}
 
-###
+### Get one
 GET http://localhost:3000/events/{{ eventId }}
 
-###
+### Update
 PATCH http://localhost:3000/events/{{ eventId }}
 Content-Type: application/json
 
@@ -29,5 +30,37 @@ Content-Type: application/json
   "price": 100
 }
 
-###
+### Delete
 DELETE http://localhost:3000/events/{{ eventId }}
+
+
+### Spot
+
+### Get all
+GET http://localhost:3000/events/{{ eventId }}/spots
+
+### Create
+# @name createSpot
+POST http://localhost:3000/events/{{ eventId }}/spots
+Content-Type: application/json
+
+{
+  "name": "A1"
+}
+
+###
+@spotId = {{ createSpot.response.body.id }}
+
+## Get one
+GET http://localhost:3000/events/{{ eventId }}/spots/{{ spotId }}
+
+### Update
+PATCH http://localhost:3000/events/{{ eventId }}/spots/{{ spotId }}
+Content-Type: application/json
+
+{
+  "name": "A2"
+}
+
+### Delete
+DELETE http://localhost:3000/events/{{ eventId }}/spots/{{ spotId }}
