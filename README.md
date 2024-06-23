@@ -45,6 +45,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Prisma migrations
+```bash
+# Update adn Run migrations from schema
+$ npx prisma migrate dev
+```
+
 ## Test
 
 ```bash
